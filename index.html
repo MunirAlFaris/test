@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .line-container {
+      display: flex;
+      flex-direction: column;
+      background-color: red;
+      width: 15px;
+      height: 100px;
+      margin: 50px auto;
+    }
+    .line-container > div {
+      position: relative;
+    }
+    .rad::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 14px;
+      height: 15px;
+      top: -17px;
+      border: 1px solid black;
+      border-bottom-right-radius: 5px;
+      border-left-color: transparent;
+      border-top-color: transparent;
+      z-index: 4;
+    }
+    .line {
+      flex: 1;
+    }
+    .line::before {
+      content: "";
+      position: absolute;
+      right: -1px;
+      top: -15px;
+      height: 100%;
+      border-right: 1px solid black;
+    }
+  </style>
+</head>
+<body>
+  <div class="line-container">
+    <div class="rad"></div>
+    <div class="line"></div>
+  </div>
+</body>
+</html>
